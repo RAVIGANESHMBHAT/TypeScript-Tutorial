@@ -16,22 +16,14 @@ const newObj = makeObject({
 });
 
 console.log(newObj);*/
-
 //////
-
-const obj = {
-  a: 1,
-  b: 2,
-  c: 3,
-} as const;
-
-type ObjKeys = keyof typeof obj;
-
-function getObjectKey(): 1;
-function getObjectKey<TKey extends ObjKeys>(key: TKey): typeof obj[TKey];
-function getObjectKey(key: ObjKeys = "a") {
-  return obj[key];
-}
-
+var obj = {
+    a: 1,
+    b: 2,
+    c: 3
+};
+var getObjectKey = function (key) {
+    if (key === void 0) { key = 'a'; }
+    return key;
+};
 console.log(getObjectKey());
-console.log(getObjectKey("b"));
